@@ -1,0 +1,19 @@
+{
+  "name": "gravity-horizon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "formulas": "node scripts/build-formula-atlas.mjs",
+    "predev": "npm run formulas",
+    "dev": "vite --host 127.0.0.1",
+    "build": "npm run formulas && vite build && node scripts/copy-license.mjs"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "mathjax-full": "^3.2.2",
+    "sharp": "^0.35.4",
+    "vite": "^5.4.0"
+  }
+}

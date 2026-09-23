@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#020202" />
+    <meta name="description" content="基于开源公式源码改编的交互式曲面黑洞。拖动旋转、滚轮缩放、点击激发时空波纹。" />
+    <title>引力视界 · 公式黑洞</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23020202'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23f4ddb0' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='15' fill='%23020202'/%3E%3Cpath d='M4 55 59 17' stroke='%23d5ad66' stroke-width='3'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main id="experience" class="cinema-mode" aria-label="交互式公式黑洞">
+      <canvas id="universe" aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <button id="cinema-button" class="cinema-button" type="button" aria-pressed="true" aria-label="显示操作界面" title="显示操作界面（I）">操作 <span>↙</span></button>
+      <div class="scene-title" aria-hidden="true">GRAVITY / HORIZON <span>·</span> 引力视界</div>
+      <footer class="bottom-bar">
+        <div class="instruction">拖动／中键旋转 <b>·</b> 滚轮缩放 <b>·</b> Shift＋拖动平移 <b>·</b> 点击激发波纹</div>
+        <div class="controls" role="group" aria-label="视角与动画控制">
+          <button id="orbit-view" class="control-button active" type="button" aria-pressed="true">轨道视角</button>
+          <button id="top-view" class="control-button" type="button" aria-pressed="false">俯瞰视角</button>
+          <button id="front-view" class="control-button" type="button">正面视角</button>
+          <button id="pause-button" class="icon-button" type="button" aria-label="暂停动画" title="暂停动画">Ⅱ</button>
+          <button id="reset-button" class="icon-button" type="button" aria-label="重置视角" title="重置视角">↺</button>
+        </div>
+      </footer>
+      <div id="status" class="sr-only" role="status" aria-live="polite"></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

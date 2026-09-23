@@ -1,0 +1,35 @@
+:root { color-scheme: dark; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; background: #020202; color: #eee1c8; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button { font: inherit; }
+button:focus-visible { outline: 2px solid #f3d99e; outline-offset: 3px; }
+#experience { position: relative; width: 100%; height: 100vh; height: 100dvh; min-height: 360px; overflow: hidden; isolation: isolate; background: #000; }
+#universe { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+#universe.dragging { cursor: grabbing; }
+.wave-overlay { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.grain { position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .14; mix-blend-mode: screen; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E"); }
+.cinema-button { position: absolute; top: 22px; right: 24px; z-index: 5; min-width: 66px; border: 1px solid rgba(240,208,157,.3); padding: 8px 11px; background: rgba(5,4,3,.65); color: #e5d0a6; font-size: 13px; letter-spacing: .08em; cursor: pointer; backdrop-filter: blur(10px); transition: opacity .2s, border-color .2s; }
+.cinema-button:hover { border-color: #e8c98c; opacity: 1 !important; }
+.cinema-button span { margin-left: 5px; }
+.scene-title { position: absolute; top: 27px; left: 28px; z-index: 3; pointer-events: none; color: #dac49b; font: 12px Georgia, serif; letter-spacing: .22em; text-shadow: 0 0 15px #000; }
+.scene-title span { color: #846d4c; margin: 0 8px; }
+.bottom-bar { position: absolute; z-index: 4; left: 28px; right: 28px; bottom: 25px; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.instruction { color: #c6b596; font-size: 14px; line-height: 1.6; text-shadow: 0 2px 12px #000; }
+.instruction b { color: #71604a; font-weight: 400; margin: 0 5px; }
+.controls { display: flex; gap: 7px; }
+.control-button, .icon-button { height: 40px; border: 1px solid rgba(230,199,144,.27); background: rgba(10,8,6,.72); color: #e0c99f; cursor: pointer; backdrop-filter: blur(12px); }
+.control-button { padding: 0 14px; font-size: 13px; }
+.icon-button { width: 40px; font: 20px Georgia, serif; }
+.control-button:hover, .icon-button:hover, .control-button.active { border-color: #e8c98c; background: rgba(67,46,22,.6); }
+.cinema-mode .scene-title, .cinema-mode .bottom-bar { opacity: 0; visibility: hidden; }
+.cinema-mode .cinema-button { opacity: .28; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 760px) {
+  .scene-title { top: 23px; left: 16px; max-width: 210px; font-size: 11px; line-height: 1.5; }
+  .cinema-button { top: 16px; right: 16px; }
+  .bottom-bar { left: 16px; right: 16px; bottom: 17px; display: block; }
+  .instruction { font-size: 12px; text-align: center; margin-bottom: 12px; }
+  .controls { width: 100%; justify-content: space-between; }
+  .control-button { flex: 1; padding: 0 4px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .cinema-button { transition: none; } }
